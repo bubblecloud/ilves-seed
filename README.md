@@ -6,10 +6,9 @@ Ilves simplifies Java web site creation. This is seed project to simplify new pr
 Preconditions
 ------------
 
-1. Java 7
-2. Maven 3
-3. PostgreSQL
-4. Git
+1. Git
+2. JDK 7
+3. Maven 3
 
 Features
 --------
@@ -17,6 +16,7 @@ Features
 1. Example of navigation, page, localization and theme icon customization.
 2. Procfile for running the project in Heroku.
 3. Build file to generate executable jar.
+4. Configuration examples for HSQL (default), PostgreSQL and MySQL.
 
 Clone
 -----
@@ -42,4 +42,4 @@ Executing
 
 Execute from command line with the following command:
 
-java -jar target/ilves-seed.jar
+ilves

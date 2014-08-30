@@ -24,7 +24,7 @@ import org.vaadin.addons.sitekit.site.*;
  *
  * @author Tommi S.E. Laukkanen
  */
-public class SiteMain {
+public class Ilves {
     /** The persistence unit to be used. */
     public static final String PERSISTENCE_UNIT = "site";
     /** The localization bundle. */

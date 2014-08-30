@@ -4,6 +4,7 @@ build
 .settings
 *.iml
 target
+data
 .idea
 release.properties
 *.releaseBackup

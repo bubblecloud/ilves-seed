@@ -1,1 +1,1 @@
-web: java -jar target/ilves-seed.jar
+web: java -jar target/ilves.jar

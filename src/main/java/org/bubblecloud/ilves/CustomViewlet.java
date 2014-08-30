@@ -24,7 +24,7 @@ import org.vaadin.addons.sitekit.site.AbstractViewlet;
 public class CustomViewlet extends AbstractViewlet {
 
     public CustomViewlet() {
-        setCompositionRoot(new Label("Hello World!"));
+        setCompositionRoot(new Label("Welcome to Ilves seed project!"));
     }
 
     @Override
