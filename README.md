@@ -1,7 +1,7 @@
 Ilves Seed Project
 ==================
 
-Ilves simplifies Java web site creation. This is seed project for east new project setup.
+Ilves simplifies Java web site creation. This is seed project to simplify new project setup.
 
 Requirements
 ------------
