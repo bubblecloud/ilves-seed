@@ -44,9 +44,10 @@ public class Ilves {
         final SiteDescriptor siteDescriptor = DefaultSiteUI.getContentProvider().getSiteDescriptor();
 
         // Describe custom view.
-        final ViewDescriptor customDescriptor = new ViewDescriptor("custom", "Custom Title", DefaultView.class);
-        customDescriptor.setViewletClass("content", CustomViewlet.class);
-        siteDescriptor.getViewDescriptors().add(customDescriptor);
+        final ViewDescriptor customViewDescriptor = new ViewDescriptor("custom", "Custom Title", DefaultView.class);
+        // Place custom viewlet to content slot in the view.
+        customViewDescriptor.setViewletClass("content", CustomViewlet.class);
+        siteDescriptor.getViewDescriptors().add(customViewDescriptor);
 
         // Add custom view to navigation.
         final NavigationVersion navigationVersion = siteDescriptor.getNavigation().getProductionVersion();

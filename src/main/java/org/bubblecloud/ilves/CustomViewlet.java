@@ -23,12 +23,20 @@ import org.vaadin.addons.sitekit.site.AbstractViewlet;
  */
 public class CustomViewlet extends AbstractViewlet {
 
+    /**
+     * Default constructor.
+     */
     public CustomViewlet() {
+        // Configure the Vaadin user interface.
         setCompositionRoot(new Label("Welcome to Ilves seed project!"));
     }
 
+    /**
+     * Invoked each time this view is visited by the user.
+     * @param parameters the Vaadin view parameters
+     */
     @Override
-    public void enter(String parameters) {
-
+    public void enter(final String parameters) {
+        // This method can be used for example to read data on demand from database.
     }
 }
