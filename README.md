@@ -3,12 +3,12 @@ Ilves Seed Project
 
 Ilves simplifies Java web site creation. This is seed project to simplify new project setup.
 
-Requirements
+Preconditions
 ------------
 
 1. Java 7
 2. Maven 3
-3. Postgresql (JPA, Eclipse Link and Liquibase used but other databases not tested.)
+3. PostgreSQL
 
 Features
 --------
@@ -17,9 +17,17 @@ Features
 2. Procfile for running the project in Heroku.
 3. Build file to generate executable jar.
 
-Usage
------
+Integrated Development Environments
+-----------------------------------
 
-1. Import project to IDE of choice (IntelliJ Idea, Eclipse, NetBeans...) by importing the maven pom.xml.
-2. Build from command line: 'mvn clean install'
-3. Execute from command line: 'java -jar target/ilves-seed.jar'
+Import project to IDE of choice (IntelliJ Idea, Eclipse, NetBeans...) by importing the maven pom.xml.
+
+Building
+--------
+
+Build from command line with the following command: 'mvn clean install'.
+
+Executing
+---------
+
+Execute from command line with the following command: 'java -jar target/ilves-seed.jar'.
