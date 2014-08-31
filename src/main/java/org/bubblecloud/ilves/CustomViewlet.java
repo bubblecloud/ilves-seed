@@ -28,7 +28,9 @@ public class CustomViewlet extends AbstractViewlet {
      */
     public CustomViewlet() {
         // Configure the Vaadin user interface.
-        setCompositionRoot(new Label("Welcome to Ilves seed project!"));
+        final Label customWelcomeLabel = new Label("Welcome to Ilves seed project!");
+        customWelcomeLabel.setStyleName("custom-welcome-label");
+        setCompositionRoot(customWelcomeLabel);
     }
 
     /**

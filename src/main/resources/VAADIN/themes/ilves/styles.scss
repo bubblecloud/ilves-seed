@@ -1,0 +1,15 @@
+@import "ilves.scss";
+
+$custom-color: #0000FF;
+
+.ilves {
+  @include ilves;
+
+  div.custom-welcome-label {
+    color: $custom-color;
+    height: 600px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 600px;
+  }
+}
