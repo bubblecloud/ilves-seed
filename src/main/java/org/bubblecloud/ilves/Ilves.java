@@ -17,7 +17,10 @@ package org.bubblecloud.ilves;
 
 import org.eclipse.jetty.server.Server;
 import org.vaadin.addons.sitekit.jetty.DefaultJettyConfiguration;
-import org.vaadin.addons.sitekit.site.*;
+import org.vaadin.addons.sitekit.site.DefaultSiteUI;
+import org.vaadin.addons.sitekit.site.NavigationVersion;
+import org.vaadin.addons.sitekit.site.SiteDescriptor;
+import org.vaadin.addons.sitekit.site.ViewDescriptor;
 
 /**
  * Seed main class.
