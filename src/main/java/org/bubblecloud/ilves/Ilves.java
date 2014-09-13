@@ -15,12 +15,10 @@
  */
 package org.bubblecloud.ilves;
 
+import org.bubblecloud.ilves.comment.CommentRootComponent;
 import org.eclipse.jetty.server.Server;
 import org.vaadin.addons.sitekit.jetty.DefaultJettyConfiguration;
-import org.vaadin.addons.sitekit.site.DefaultSiteUI;
-import org.vaadin.addons.sitekit.site.NavigationVersion;
-import org.vaadin.addons.sitekit.site.SiteDescriptor;
-import org.vaadin.addons.sitekit.site.ViewDescriptor;
+import org.vaadin.addons.sitekit.site.*;
 
 /**
  * Seed main class.
@@ -29,7 +27,7 @@ import org.vaadin.addons.sitekit.site.ViewDescriptor;
  */
 public class Ilves {
     /** The persistence unit to be used. */
-    public static final String PERSISTENCE_UNIT = "site";
+    public static final String PERSISTENCE_UNIT = "custom";
     /** The localization bundle. */
     public static final String LOCALIZATION_BUNDLE = "custom-localization";
 
@@ -46,16 +44,21 @@ public class Ilves {
         // Get default site descriptor.
         final SiteDescriptor siteDescriptor = DefaultSiteUI.getContentProvider().getSiteDescriptor();
 
+        // Custom view name.
+        final String customViewName = "custom";
+
         // Describe custom view.
-        final ViewDescriptor customViewDescriptor = new ViewDescriptor("custom", CustomView.class);
-        // Place custom viewlet to content slot in the view.
-        customViewDescriptor.setViewletClass("content", CustomViewlet.class);
-        siteDescriptor.getViewDescriptors().add(customViewDescriptor);
+        final ViewDescriptor commentView = new ViewDescriptor(customViewName, CustomView.class);
+        siteDescriptor.getViewDescriptors().add(commentView);
+        // Place example viewlet to content slot in the view.
+        commentView.setViewletClass(Slot.CONTENT, CustomViewlet.class);
+        // Place example Vaadin component to footer slot in the view.
+        commentView.setComponentClass(Slot.FOOTER, CommentRootComponent.class);
 
         // Add custom view to navigation.
-        final NavigationVersion navigationVersion = siteDescriptor.getNavigation().getProductionVersion();
-        navigationVersion.setDefaultPageName("custom");
-        navigationVersion.addRootPage(0, "custom");
+        final NavigationVersion navigationVersion = siteDescriptor.getNavigationVersion();
+        navigationVersion.setDefaultPageName(customViewName);
+        navigationVersion.addRootPage(0, customViewName);
 
         // Start server.
         server.start();
