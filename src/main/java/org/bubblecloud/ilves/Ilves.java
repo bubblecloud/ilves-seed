@@ -15,6 +15,7 @@
  */
 package org.bubblecloud.ilves;
 
+import org.apache.log4j.xml.DOMConfigurator;
 import org.bubblecloud.ilves.comment.CommentRootComponent;
 import org.eclipse.jetty.server.Server;
 import org.vaadin.addons.sitekit.jetty.DefaultJettyConfiguration;
@@ -38,6 +39,9 @@ public class Ilves {
      * @throws Exception if exception occurs in jetty startup.
      */
     public static void main(final String[] args) throws Exception {
+        // Configure logging.
+        DOMConfigurator.configure("log4j.xml");
+
         // The default Jetty server configuration.
         final Server server = DefaultJettyConfiguration.configureServer(PERSISTENCE_UNIT, LOCALIZATION_BUNDLE);
 
