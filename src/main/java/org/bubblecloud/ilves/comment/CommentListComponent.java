@@ -54,7 +54,6 @@ public class CommentListComponent extends CustomComponent {
 
         final GridLayout gridLayout = new GridLayout(3, commentList.size() + 1);
         panel.setContent(gridLayout);
-        gridLayout.setWidth(100, Unit.PERCENTAGE);
         gridLayout.setSpacing(true);
         gridLayout.setMargin(true);
         gridLayout.setColumnExpandRatio(0, 0.0f);
