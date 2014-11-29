@@ -20,6 +20,7 @@ import org.bubblecloud.ilves.comment.CommentRootComponent;
 import org.eclipse.jetty.server.Server;
 import org.vaadin.addons.sitekit.jetty.DefaultJettyConfiguration;
 import org.vaadin.addons.sitekit.site.*;
+import org.vaadin.addons.sitekit.valo.DefaultValoView;
 
 /**
  * Seed main class.
@@ -52,7 +53,7 @@ public class Ilves {
         final String customViewName = "custom";
 
         // Describe custom view.
-        final ViewDescriptor commentView = new ViewDescriptor(customViewName, CustomView.class);
+        final ViewDescriptor commentView = new ViewDescriptor(customViewName, DefaultValoView.class);
         siteDescriptor.getViewDescriptors().add(commentView);
         // Place example viewlet to content slot in the view.
         commentView.setViewletClass(Slot.CONTENT, CustomViewlet.class);
