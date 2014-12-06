@@ -90,6 +90,27 @@
                     <password>password</password>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                        <configuration>
+                            <classpathScope>compile</classpathScope>
+                            <mainClass>com.vaadin.sass.SassCompiler</mainClass>
+                            <arguments>
+                                <argument>src/main/resources/VAADIN/themes/ilves/styles.scss</argument>
+                                <argument>target/classes/VAADIN/themes/ilves/styles.css</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
@@ -114,7 +135,7 @@
         <dependency>
             <groupId>org.bubblecloud.ilves</groupId>
             <artifactId>ilves-vaadin</artifactId>
-            <version>3.0.5</version>
+            <version>3.0.6</version>
         </dependency>
         <dependency>
             <groupId>postgresql</groupId>
