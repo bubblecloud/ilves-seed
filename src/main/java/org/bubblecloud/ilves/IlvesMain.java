@@ -29,7 +29,6 @@ package org.bubblecloud.ilves;
 import org.apache.log4j.xml.DOMConfigurator;
 import org.bubblecloud.ilves.comment.CommentingComponent;
 import org.eclipse.jetty.server.Server;
-import org.vaadin.addons.sitekit.jetty.DefaultJettyConfiguration;
 import org.vaadin.addons.sitekit.site.*;
 import org.vaadin.addons.sitekit.site.view.DefaultValoView;
 
@@ -38,11 +37,14 @@ import org.vaadin.addons.sitekit.site.view.DefaultValoView;
  *
  * @author Tommi S.E. Laukkanen
  */
-public class Ilves {
+public class IlvesMain {
+
+    /** The properties file prefix.*/
+    public static final String PROPERTIES_FILE_PREFIX = "site";
+    /** The localization bundle. */
+    public static final String LOCALIZATION_BUNDLE_PREFIX = "custom-localization";
     /** The persistence unit to be used. */
     public static final String PERSISTENCE_UNIT = "custom";
-    /** The localization bundle. */
-    public static final String LOCALIZATION_BUNDLE = "custom-localization";
 
     /**
      * Main method for tutorial site.
@@ -54,28 +56,13 @@ public class Ilves {
         // Configure logging.
         DOMConfigurator.configure("log4j.xml");
 
-        // The default Jetty server configuration.
-        final Server server = DefaultJettyConfiguration.configureServer(PERSISTENCE_UNIT, LOCALIZATION_BUNDLE);
+        // Construct jetty server.
+        final Server server = Ilves.configure(PROPERTIES_FILE_PREFIX, LOCALIZATION_BUNDLE_PREFIX, PERSISTENCE_UNIT);
 
-        // Get default site descriptor.
-        final SiteDescriptor siteDescriptor = DefaultSiteUI.getContentProvider().getSiteDescriptor();
-
-        // Custom view name.
-        final String customViewName = "custom";
-
-        // Describe custom view.
-        final ViewDescriptor commentView = new ViewDescriptor(customViewName, DefaultValoView.class);
-        siteDescriptor.getViewDescriptors().add(commentView);
-
-        // Place example Vaadin component to content slot in the view.
-        commentView.setComponentClass(Slot.CONTENT, WelcomeComponent.class);
-        // Place example Vaadin component to footer slot in the view.
-        commentView.setComponentClass(Slot.FOOTER, CommentingComponent.class);
-
-        // Add custom view to navigation.
-        final NavigationVersion navigationVersion = siteDescriptor.getNavigationVersion();
-        navigationVersion.setDefaultPageName(customViewName);
-        navigationVersion.addRootPage(0, customViewName);
+        Ilves.addRootPage(0, "custom", DefaultValoView.class);
+        Ilves.setPageComponent("custom", Slot.CONTENT, WelcomeComponent.class);
+        Ilves.setPageComponent("custom", Slot.FOOTER, CommentingComponent.class);
+        Ilves.setDefaultPage("custom");
 
         // Start server.
         server.start();
