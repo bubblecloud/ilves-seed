@@ -1,29 +1,40 @@
 /**
- * Copyright 2013 Tommi S.E. Laukkanen
+ * This is free and unencumbered software released into the public domain.
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
+ * Anyone is free to copy, modify, publish, use, compile, sell, or
+ * distribute this software, either in source code form or as a compiled
+ * binary, for any purpose, commercial or non-commercial, and by any
+ * means.
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ * In jurisdictions that recognize copyright laws, the author or authors
+ * of this software dedicate any and all copyright interest in the
+ * software to the public domain. We make this dedication for the benefit
+ * of the public at large and to the detriment of our heirs and
+ * successors. We intend this dedication to be an overt act of
+ * relinquishment in perpetuity of all present and future rights to this
+ * software under copyright law.
  *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ * IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+ * OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ * OTHER DEALINGS IN THE SOFTWARE.
+ *
+ * For more information, please refer to <http://unlicense.org/>
  */
 package org.bubblecloud.ilves;
 
 import org.apache.log4j.xml.DOMConfigurator;
-import org.bubblecloud.ilves.comment.CommentRootComponent;
+import org.bubblecloud.ilves.comment.CommentingComponent;
 import org.eclipse.jetty.server.Server;
 import org.vaadin.addons.sitekit.jetty.DefaultJettyConfiguration;
 import org.vaadin.addons.sitekit.site.*;
-import org.vaadin.addons.sitekit.valo.DefaultValoView;
+import org.vaadin.addons.sitekit.site.view.DefaultValoView;
 
 /**
- * Seed main class.
+ * Ilves seed project main class.
  *
  * @author Tommi S.E. Laukkanen
  */
@@ -55,10 +66,11 @@ public class Ilves {
         // Describe custom view.
         final ViewDescriptor commentView = new ViewDescriptor(customViewName, DefaultValoView.class);
         siteDescriptor.getViewDescriptors().add(commentView);
-        // Place example viewlet to content slot in the view.
-        commentView.setViewletClass(Slot.CONTENT, CustomViewlet.class);
+
+        // Place example Vaadin component to content slot in the view.
+        commentView.setComponentClass(Slot.CONTENT, WelcomeComponent.class);
         // Place example Vaadin component to footer slot in the view.
-        commentView.setComponentClass(Slot.FOOTER, CommentRootComponent.class);
+        commentView.setComponentClass(Slot.FOOTER, CommentingComponent.class);
 
         // Add custom view to navigation.
         final NavigationVersion navigationVersion = siteDescriptor.getNavigationVersion();
