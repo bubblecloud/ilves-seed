@@ -135,7 +135,7 @@
         <dependency>
             <groupId>org.bubblecloud.ilves</groupId>
             <artifactId>ilves-vaadin</artifactId>
-            <version>3.0.6</version>
+            <version>3.0.7-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>postgresql</groupId>
