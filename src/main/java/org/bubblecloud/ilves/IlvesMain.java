@@ -47,7 +47,7 @@ public class IlvesMain {
     public static final String PERSISTENCE_UNIT = "custom";
 
     /**
-     * Main method for tutorial site.
+     * Main method for Ilves seed project.
      *
      * @param args the commandline arguments
      * @throws Exception if exception occurs in jetty startup.
