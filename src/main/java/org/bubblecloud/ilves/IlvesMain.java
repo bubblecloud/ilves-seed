@@ -28,6 +28,10 @@ package org.bubblecloud.ilves;
 
 import org.apache.log4j.xml.DOMConfigurator;
 import org.bubblecloud.ilves.comment.CommentingComponent;
+import org.bubblecloud.ilves.module.audit.AuditModule;
+import org.bubblecloud.ilves.module.content.ContentModule;
+import org.bubblecloud.ilves.module.customer.CustomerModule;
+import org.bubblecloud.ilves.site.SiteModuleManager;
 import org.bubblecloud.ilves.site.Slot;
 import org.bubblecloud.ilves.site.view.valo.DefaultValoView;
 import org.eclipse.jetty.server.Server;
@@ -58,6 +62,11 @@ public class IlvesMain {
 
         // Construct jetty server.
         final Server server = Ilves.configure(PROPERTIES_FILE_PREFIX, LOCALIZATION_BUNDLE_PREFIX, PERSISTENCE_UNIT);
+
+        // Initialize modules
+        Ilves.initializeModule(AuditModule.class);
+        Ilves.initializeModule(CustomerModule.class);
+        Ilves.initializeModule(ContentModule.class);
 
         Ilves.addRootPage(0, "custom", DefaultValoView.class);
         Ilves.setPageComponent("custom", Slot.CONTENT, WelcomeComponent.class);
