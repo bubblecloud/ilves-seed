@@ -5,7 +5,9 @@ import org.bubblecloud.ilves.util.PersistenceUtil;
 import org.bubblecloud.ilves.util.PropertiesUtil;
 
 /**
- * Created by tlaukkan on 12/13/2014.
+ * Helper class for easily generating templates for liquibase change files from JPA model.
+ *
+ * You will need to edit the generated change sets to modify things like schema and data types.
  */
 public class IlvesDbDiff {
 

@@ -44,8 +44,8 @@ import java.util.Date;
 public final class Comment implements Serializable {
     /** Java serialization version UID. */
     private static final long serialVersionUID = 1L;
-    /** Unique UUID of the entity. */
 
+    /** Unique UUID of the entity. */
     @Id
     @GeneratedValue(generator = "uuid")
     private String commentId;
