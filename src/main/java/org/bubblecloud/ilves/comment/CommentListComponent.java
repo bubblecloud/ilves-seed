@@ -29,9 +29,9 @@ package org.bubblecloud.ilves.comment;
 import com.vaadin.server.VaadinService;
 import com.vaadin.ui.*;
 import com.vaadin.ui.themes.ValoTheme;
-import org.vaadin.addons.sitekit.model.Company;
-import org.vaadin.addons.sitekit.site.Site;
-import org.vaadin.addons.sitekit.util.GravatarUtil;
+import org.bubblecloud.ilves.model.Company;
+import org.bubblecloud.ilves.site.Site;
+import org.bubblecloud.ilves.util.GravatarUtil;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;

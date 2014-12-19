@@ -29,10 +29,10 @@ package org.bubblecloud.ilves.comment;
 import com.vaadin.server.VaadinService;
 import com.vaadin.ui.*;
 import org.apache.commons.lang3.StringUtils;
-import org.vaadin.addons.sitekit.model.Company;
-import org.vaadin.addons.sitekit.model.User;
-import org.vaadin.addons.sitekit.site.DefaultSiteUI;
-import org.vaadin.addons.sitekit.site.Site;
+import org.bubblecloud.ilves.model.Company;
+import org.bubblecloud.ilves.model.User;
+import org.bubblecloud.ilves.site.DefaultSiteUI;
+import org.bubblecloud.ilves.site.Site;
 
 import javax.persistence.EntityManager;
 

@@ -1,8 +1,8 @@
 package org.bubblecloud.ilves;
 
 import org.apache.log4j.xml.DOMConfigurator;
-import org.vaadin.addons.sitekit.util.PersistenceUtil;
-import org.vaadin.addons.sitekit.util.PropertiesUtil;
+import org.bubblecloud.ilves.util.PersistenceUtil;
+import org.bubblecloud.ilves.util.PropertiesUtil;
 
 /**
  * Created by tlaukkan on 12/13/2014.

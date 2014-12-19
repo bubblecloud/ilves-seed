@@ -28,9 +28,9 @@ package org.bubblecloud.ilves;
 
 import org.apache.log4j.xml.DOMConfigurator;
 import org.bubblecloud.ilves.comment.CommentingComponent;
+import org.bubblecloud.ilves.site.Slot;
+import org.bubblecloud.ilves.site.view.valo.DefaultValoView;
 import org.eclipse.jetty.server.Server;
-import org.vaadin.addons.sitekit.site.*;
-import org.vaadin.addons.sitekit.site.view.DefaultValoView;
 
 /**
  * Ilves seed project main class.
