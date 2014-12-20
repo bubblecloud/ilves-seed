@@ -96,7 +96,7 @@
                 <version>1.2.1</version>
                 <executions>
                     <execution>
-                        <phase>compile</phase>
+                        <phase>generate-sources</phase>
                         <goals>
                             <goal>java</goal>
                         </goals>
@@ -135,7 +135,7 @@
         <dependency>
             <groupId>org.bubblecloud.ilves</groupId>
             <artifactId>ilves-vaadin</artifactId>
-            <version>4.0.1</version>
+            <version>4.0.2</version>
         </dependency>
         <dependency>
             <groupId>postgresql</groupId>

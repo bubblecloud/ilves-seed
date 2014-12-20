@@ -76,7 +76,7 @@ public class IlvesMain {
         // Start server.
         server.start();
 
-        // Join this main thread to the Jetty server thread.
+        // Wait for exit of the Jetty server.
         server.join();
     }
 }
