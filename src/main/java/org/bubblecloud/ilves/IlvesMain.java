@@ -68,7 +68,7 @@ public class IlvesMain {
         Ilves.initializeModule(CustomerModule.class);
         Ilves.initializeModule(ContentModule.class);
 
-        Ilves.addRootPage("login", "custom", DefaultValoView.class);
+        Ilves.addRootPage(0, "custom", DefaultValoView.class);
         Ilves.setPageComponent("custom", Slot.CONTENT, WelcomeComponent.class);
         Ilves.setPageComponent("custom", Slot.FOOTER, CommentingComponent.class);
         Ilves.setDefaultPage("custom");
