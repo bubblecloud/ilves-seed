@@ -68,10 +68,11 @@ public class IlvesMain {
         Ilves.initializeModule(CustomerModule.class);
         Ilves.initializeModule(ContentModule.class);
 
-        Ilves.addRootPage(0, "custom", DefaultValoView.class);
-        Ilves.setPageComponent("custom", Slot.CONTENT, WelcomeComponent.class);
-        Ilves.setPageComponent("custom", Slot.FOOTER, CommentingComponent.class);
-        Ilves.setDefaultPage("custom");
+        Ilves.addNavigationCategoryPage(0, "custom");
+        Ilves.addChildPage("custom", "comments", DefaultValoView.class);
+        Ilves.setPageComponent("comments", Slot.CONTENT, WelcomeComponent.class);
+        Ilves.setPageComponent("comments", Slot.FOOTER, CommentingComponent.class);
+        Ilves.setDefaultPage("comments");
 
         // Start server.
         server.start();
