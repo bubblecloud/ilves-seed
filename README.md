@@ -43,3 +43,8 @@ Executing
 Execute from command line with the following command:
 
 ilves
+
+Debugging
+---------
+
+Debug from IDE by executing IlvesMain class in debug mode.
