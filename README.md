@@ -48,3 +48,8 @@ Debugging
 ---------
 
 Debug from IDE by executing IlvesMain class in debug mode.
+
+Browse
+------
+
+Open browser at https://localhost:8443/
