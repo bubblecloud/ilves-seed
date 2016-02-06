@@ -31,6 +31,7 @@ import org.bubblecloud.ilves.comment.CommentingComponent;
 import org.bubblecloud.ilves.module.audit.AuditModule;
 import org.bubblecloud.ilves.module.content.ContentModule;
 import org.bubblecloud.ilves.module.customer.CustomerModule;
+import org.bubblecloud.ilves.security.SecurityUtil;
 import org.bubblecloud.ilves.site.SiteModuleManager;
 import org.bubblecloud.ilves.site.Slot;
 import org.bubblecloud.ilves.site.view.valo.DefaultValoView;
