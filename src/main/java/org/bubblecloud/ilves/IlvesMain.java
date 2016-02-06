@@ -31,8 +31,6 @@ import org.bubblecloud.ilves.comment.CommentingComponent;
 import org.bubblecloud.ilves.module.audit.AuditModule;
 import org.bubblecloud.ilves.module.content.ContentModule;
 import org.bubblecloud.ilves.module.customer.CustomerModule;
-import org.bubblecloud.ilves.security.SecurityUtil;
-import org.bubblecloud.ilves.site.SiteModuleManager;
 import org.bubblecloud.ilves.site.Slot;
 import org.bubblecloud.ilves.site.view.valo.DefaultValoView;
 import org.eclipse.jetty.server.Server;
@@ -71,7 +69,7 @@ public class IlvesMain {
 
         Ilves.addNavigationCategoryPage(0, "custom");
         Ilves.addChildPage("custom", "comments", DefaultValoView.class);
-        Ilves.setPageComponent("comments", Slot.CONTENT, WelcomeComponent.class);
+        Ilves.setPageComponent("comments", Slot.CONTENT, HelloComponent.class);
         Ilves.setPageComponent("comments", Slot.FOOTER, CommentingComponent.class);
         Ilves.setDefaultPage("comments");
 

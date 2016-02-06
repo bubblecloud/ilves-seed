@@ -28,22 +28,29 @@ package org.bubblecloud.ilves;
 
 import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.Label;
+import org.bubblecloud.ilves.model.User;
 
 /**
- * Custom viewlet.
+ * Custom component example.
  *
  * @author Tommi S.E. Laukkanen
  */
-public class WelcomeComponent extends CustomComponent {
+public class HelloComponent extends CustomComponent {
 
     /**
-     * Default constructor.
+     * Default constructor which sets up the component.
      */
-    public WelcomeComponent() {
-        // Configure the Vaadin user interface.
-        final Label customWelcomeLabel = new Label("Welcome to Ilves");
-        customWelcomeLabel.setStyleName("custom-welcome-label");
-        setCompositionRoot(customWelcomeLabel);
+    public HelloComponent() {
+        final User user = Ilves.getCurrentUser();
+        final String greeting;
+        if (user == null) {
+            greeting = "Hello";
+        } else {
+            greeting = "Hi, " + user.getFirstName() + "!";
+        }
+        final Label label = new Label(greeting);
+        label.setStyleName("custom-welcome-label");
+        setCompositionRoot(label);
     }
 
 }
