@@ -13,3 +13,4 @@ release.properties
 atlassian-ide-plugin.xml
 *.jks
 asset-cache
+key-encryption-secret-key-candidate.properties
